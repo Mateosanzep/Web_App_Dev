@@ -1,3 +1,23 @@
 body {
     margin: 0;
 }
+div {
+    width: 100px;
+    height: 200px;
+    position: relative;
+}
+.red{
+    background-color: #CE1126;
+    left: 200px;
+}
+
+.blue {
+    background-color: #002B7F;
+    top: -200px;
+}
+
+.yellow {
+    background-color: #FCD116;
+    top: -400px;
+    left: 100px;
+}

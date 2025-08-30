@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+}
+
+.container {
+    position: relative;
+}
+
+div{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
+.red{
+    background-color: #ff0000;
+    top: 400px;
+    left: 400px;
+}
+
+.blue {
+    background-color: #0033ff;
+    left: 200px;
+    top: 200px;
+}
+
+.yellow {
+    background-color: #ddff00;
+    top: 0px;
+    left: 0px;
+}
