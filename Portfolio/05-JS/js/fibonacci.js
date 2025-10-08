@@ -7,8 +7,14 @@ var memo = {};
 function fibonacci() {
   "use strict";
   var n = document.getElementById("num").value;
-  var val = f(n);
-  return val;
+  if (n === "" || isNaN(n) || n < 0) {
+    document.getElementById("fibonacciLbl").innerText = "Please enter a valid number";
+    return;
+  }
+  else {
+    var val = f(n);
+    return val;
+  }
 }
 
 function f(n) {
@@ -16,12 +22,18 @@ function f(n) {
   // Check if the memory array already contains the requested number
   if (memo.hasOwnProperty(n)) {
     value = memo[n];
+  // Fibonacci funtion
   } else {
-    //TODO: Implement the fibonacci function here!
-
+    if (n === 0) {
+      value = 0;
+    } else if (n === 1) {
+      value = 1;
+    } else {
+      value = f(n - 1) + f(n - 2);
+    }
+    // Store value in memo
     memo[n] = value;
   }
-
+  document.getElementById("fibonacciLbl").innerText = "Fibonacci value: " + value;
   return value;
 }
-console.log(fibonacci(15));

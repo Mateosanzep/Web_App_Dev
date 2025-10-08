@@ -1,0 +1,31 @@
+{
+  "name": "basic_node",
+  "version": "1.0.0",
+  "description": "Basic node examples",
+  "keywords": [
+    "node",
+    "examples",
+    "test",
+    "basic"
+  ],
+  "homepage": "https://github.com/Mateosanzep/Web_App_Dev#readme",
+  "bugs": {
+    "url": "https://github.com/Mateosanzep/Web_App_Dev/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mateosanzep/Web_App_Dev.git"
+  },
+  "license": "ISC",
+  "author": "Mateo Sanchez",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "star-wars-quotes": "^1.0.2",
+    "superheroes": "^4.0.0",
+    "supervillains": "^4.0.0"
+  }
+}

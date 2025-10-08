@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Exercises - Pig Latin</title>
-    <script type="text/javascript" src="js/pig_latin.js"></script>
 </head>
 
 <body>
@@ -17,12 +16,12 @@
         adding a vocalic syllable to create such a suffix</p>
     <div>
         <input type="text" id="txtVal" />
-        <button id="btn" onclick="igpayAtinlay">
+        <button id="btn" onclick="igpayAtinlay(document.getElementById('txtVal').value)">
             Click To Get The Pig Latin Translationr</button>
         <br />
         <span id="pigLatLbl"></span>
     </div>
-
+<script type="text/javascript" src="js/pig_latin.js"></script>
 </body>
 
 </html>

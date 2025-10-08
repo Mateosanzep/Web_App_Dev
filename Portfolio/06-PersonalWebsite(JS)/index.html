@@ -4,9 +4,616 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Website - CSS</title>
+  <title>Personal Website - bootstrap</title>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-  
+  <nav class="navbar navbar-expand-lg bg-body-secondary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Personal Website</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Background
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Background</a></li>
+            <li><a class="dropdown-item" href="#">Education</a></li>
+            <li><a class="dropdown-item" href="#">Skills</a></li>
+            <li><a class="dropdown-item" href="#">Hobbies</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Spots
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#favorites">My Favorite Spots</a></li>
+            <li><a class="dropdown-item" href="./destination.html#top">See my Destinations</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Heroes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Schedule</a>
+        </li>
+      </ul>
+      <form id="navSearchForm" class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button id="navSearchBtn" class="btn btn-outline-success" type="submit" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Search any information in the website">
+          <span id="navSearchSpinner" class="spinner-border spinner-border-sm me-2 d-none" role="status" aria-hidden="true"></span>
+          <span id="navSearchLabel">Search</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+  <div class="sky-container">
+    <img src="images/cloud.png" alt="Cloud" class="cloud-image cloud1">
+    <img src="images/cloud.png" alt="Cloud" class="cloud-image cloud2">
+  </div>
+    <div class="section section_info container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-4 text-center">
+          <img src="images/Mateo_Sanchez.jpg" alt="Profile Picture" class="img-fluid rounded-circle profile-picture">
+        </div>
+        <div class="col-12 col-md-8">
+          <h1>Mateo Sanchez Zepeda</h1>
+          <p>
+            <b>Currect job: </b> UP student <br>
+            <b>Address: </b>Calzada central, Zapopan, Jalisco
+          </p>
+        </div>
+      </div>
+      <p>
+          I am a university student at the UP from Gudalajara. Right now I am studing ISGC. <br>
+          I am 19 years old. All my life I been here in Gudalajara with my family, that is <br>
+          an important thing in my life. Also my friends are someones with I like to spend <br>
+          my time. My favorite sports are the soccer and the F1 
+      </p>
+      <blockquote>
+          <p>The only true wisdom is in knowing you know nothing.</p>
+          <footer>—Socrates</footer>
+      </blockquote>
+    </div>
+
+    <hr>
+
+    <div class="section section_background">
+      <h2>Background</h2>
+      <p>
+          My only background right now is that I studied the first 12 years of my life in <br>
+          the same place, at Altamira. Having a good outcome of that collage <br> <br>
+          <b>My goals: </b>
+          My goals are to be very sucessfull and be able to create my own enterprise to <br>
+          generate money and help people
+      </p>
+    </div>
+
+    <hr>
+
+    <div class="section section_education">
+      <h2>Education</h2>
+      <ul>
+        <li>
+          Elementary School <br>
+          <ul>
+            <li>
+              <a class="link-offset-3 link-offset-5-hover link-underline link-underline-opacity-0 link-underline-opacity-50-hover" href="https://www.altamira.edu.mx/" target="_blank">
+                <img src="images/Altamira.png" alt="Colegio Altamira logo" class="logo"><br>
+                <b>Altamira</b>
+              </a> <em>(2012 - 2018)</em>
+            </li>
+          </ul>
+          </li>
+          <li>
+          Junior High School (JHS)<br>
+          <ul>
+            <li>
+              <a class="link-offset-3 link-offset-5-hover link-underline link-underline-opacity-0 link-underline-opacity-50-hover" href="https://www.altamira.edu.mx/" target="_blank">
+                <img src="images/Altamira.png" alt="Colegio Altamira logo" class="logo"><br>
+                <b>Altamira</b>
+              </a> <em>(2018 - 2021)</em>
+            </li>
+          </ul>
+          </li>
+          <li>
+          High School (HS)<br>
+          <ul>
+            <li>
+              <a class="link-offset-3 link-offset-5-hover link-underline link-underline-opacity-0 link-underline-opacity-50-hover" href="https://www.altamira.edu.mx/" target="_blank">
+                <img src="images/Altamira.png" alt="Colegio Altamira logo" class="logo"><br>
+                <b>Altamira</b>
+              </a> <em>(2021 - 2024)</em>
+            </li>
+          </ul>
+        </li>
+        <li>
+          University<br>
+          <ul>
+            <li>
+              <a class="link-offset-3 link-offset-5-hover link-underline link-underline-opacity-0 link-underline-opacity-50-hover" href="https://www.up.edu.mx/" target="_blank">
+                <img src="images/UP.png" alt="Universidad Panamericana logo" class="logo"><br>
+                <b>UP</b>
+              </a> <em>(2024 - Today)</em>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div class="section section_skills">
+      <h2>Skills</h2>
+      <h3>My Top 5 Technical Skills</h3>
+      <div class="accordion accordion-flush m-5" id="accordionFlush">
+      <div class="accordion-item bg-info-subtle">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            JavaScript
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+          <div class="accordion-body bg-info-subtle">85%</div>
+        </div>
+      </div>
+      <div class="accordion-item bg-info-subtle">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Python
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+          <div class="accordion-body bg-info-subtle">70%</div>
+        </div>
+      </div>
+      <div class="accordion-item bg-info-subtle">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            HTML/CSS
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+          <div class="accordion-body bg-info-subtle">95%</div>
+        </div>
+      </div>
+      <div class="accordion-item bg-info-subtle">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            SQL
+          </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+          <div class="accordion-body bg-info-subtle">75%</div>
+        </div>
+      </div>
+      <div class="accordion-item bg-info-subtle">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+            React
+          </button>
+        </h2>
+        <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+          <div class="accordion-body bg-info-subtle">80%</div>
+        </div>
+      </div>
+
+    <hr>
+
+    <div class="section section_hobbies">
+      <h2>Hobbies</h2>
+      <h3>Favorite Food</h3>
+      <h4>Top 5</h4>
+      <ol> 
+        <li data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Tacos de Pastor">Mexican</li>
+        <li data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Pizza">Italian</li>
+        <li data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Paella">Spanish</li>
+        <li data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Bacalhau à Brás">Portuguese</li>
+        <li data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Ratatouille">French</li>
+      </ol>
+
+      <h4>Bottom 3</h4>
+      <ol>
+        <li data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Pad Thai">Thai</li>
+        <li data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Jerk Chicken">Caribbean</li>
+        <li data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Adobo">Filipino</li>
+      </ol>
+
+      <h3>Entertainment</h3>
+      <ul class="entertainment-list">
+        <li>
+          <img src="images/Book_Icon.png" alt="Books Icon" class="icon-40"><br>
+          <span>Books</span>
+          <ul>
+            <li>
+              <img src="images/To_Kill_a_Mockingbird.jpg" alt="To Kill a Mockingbird" class="icon-40">
+              <span>To Kill a Mockingbird</span>
+            </li>
+            <li>
+              <img src="images/Frankenstein.jpg" alt="Frankenstein" class="icon-40">
+              <span>Frankenstein</span>
+            </li>
+            <li>
+              <img src="images/Crime_and_Punishment.jpg" alt="Crime and Punishment" class="icon-40 ">
+              <span>Crime and Punishment</span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <img src="images/Movie_Icon.png" alt="Movies Icon" class="icon-40"><br>
+          <span>Movies</span>
+          <ul>
+            <li>
+              <img src="images/Blade_Runner.jpg" alt="Blade Runner" class="icon-40">
+              <span>Blade Runner</span>
+            </li>
+            <li>
+              <img src="images/Interstellar.jpg" alt="Interstellar" class="icon-40">
+              <span>Interstellar</span>
+            </li>
+            <li>
+              <img src="images/Once_Upon_a_Time_in_Hollywood.jpg" alt="Once Upon a Time in Hollywood" class="icon-40">
+              <span>Once Upon a Time in Hollywood</span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <img src="images/TV_Show_Icon.png" alt="TV Shows Icon" class="icon-40"><br>
+          <span>TV Shows</span>
+          <ul>
+            <li>
+              <img src="images/South_Park.jpg" alt="South Park" class="icon-40">
+              <span>South Park</span>
+            </li>
+            <li>
+              <img src="images/Stranger_Things.jpg" alt="Stranger Things" class="icon-40">
+              <span>Stranger Things</span>
+            </li>
+            <li>
+              <img src="images/Malcolm_in_the_Middle.jpg" alt="Malcolm in the Middle" class="icon-40">
+              <span>Malcolm in the Middle</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div id="tvShowCarousel" class="carousel slide m-5" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/South_Park.jpg" class="d-block w-100" alt="South Park">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+            <h5>South Park</h5>
+            <p>Animated satire about four boys in a crazy Colorado town.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/Stranger_Things.jpg" class="d-block w-100" alt="Stranger Things">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+            <h5>Stranger Things</h5>
+            <p>Kids uncover supernatural mysteries in small-town 1980s America.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/Malcolm_in_the_Middle.jpg" class="d-block w-100" alt="Malcolm in the Middle">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+            <h5>Malcolm in the Middle</h5>
+            <p>Gifted boy navigates chaos in his dysfunctional family life.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#tvShowCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#tvShowCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <hr>
+
+    <div class="section section_favorites">
+      <h2 id="favorites">My Favorite Spots</h2>
+      <a href="./destination.html#top">See my Destinations</a><br>
+      <div class="btn-group-vertical m-4" role="group" aria-label="Vertical button group">
+        <a href="./destination.html#rome" class="btn btn-outline-danger">Rome</a>
+        <a href="./destination.html#budapest" class="btn btn-outline-danger">Budapest</a>
+        <a href="./destination.html#prague" class="btn btn-outline-danger">Prague</a>
+        <a href="./destination.html#riga" class="btn btn-outline-danger">Riga</a>
+        <a href="./destination.html#madrid" class="btn btn-outline-danger">Madrid</a>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="section section_people">
+      <h2>Heroes</h2>
+      
+      <div class="row gy-4">
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="images/Nikola_Tesla.jpg" class="card-img-top" alt="Nikola Tesla">
+            <div class="card-body">
+              <h5 class="card-title">Nikola Tesla</h5>
+              <p class="card-text">Inventor, Electrical Engineer</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Alternating Current (AC) system, Tesla Coil, Radio technology pioneer</li>
+              <li class="list-group-item">10 July 1856 – 7 January 1943</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="images/Steve_Jobs.jpg" class="card-img-top" alt="Steve Jobs">
+            <div class="card-body">
+              <h5 class="card-title">Steve Jobs</h5>
+              <p class="card-text">Entrepreneur, Inventor</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Co-founder of Apple Inc., iPhone, iPad, Mac, Pixar Animation Studios</li>
+              <li class="list-group-item">24 February 1955 – 5 October 2011</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="images/Elon_Musk.jpg" class="card-img-top" alt="Elon Musk">
+            <div class="card-body">
+              <h5 class="card-title">Elon Musk</h5>
+              <p class="card-text">Entrepreneur, Engineer</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">CEO of Tesla, SpaceX, Founder of Neuralink, The Boring Company, PayPal co-founder</li>
+              <li class="list-group-item">28 June 1971 – Present</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="section section_schedule">
+      <h2>Weekly Schedule</h2>
+  <div class="table-responsive">
+  <table class="table table-striped" id="tableSchedule">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Start</th>
+          <th>End</th>
+          <th>Description</th>
+          <th>Place</th>
+          <th>Type</th>
+          <th>Notes</th>
+          <th>With</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+  <tr>
+          <td data-label="Date">Monday</td>
+          <td data-label="Start">08:00</td>
+          <td data-label="End">10:00</td>
+          <td data-label="Description">Math Class</td>
+          <td data-label="Place">UP</td>
+          <td data-label="Type">Academic</td>
+          <td data-label="Notes">Bring calculator</td>
+          <td data-label="With">Classmates</td>
+          <td data-label="Status"><img src="images/busy.png" alt="Busy" class="icon-24"></td>
+  </tr>
+  <tr>
+          <td data-label="Date">Tuesday</td>
+          <td data-label="Start">14:00</td>
+          <td data-label="End">16:00</td>
+          <td data-label="Description">Soccer Practice</td>
+          <td data-label="Place">Sports Center</td>
+          <td data-label="Type">Sports</td>
+          <td data-label="Notes">Wear uniform</td>
+          <td data-label="With">Team</td>
+          <td data-label="Status"><img src="images/free.png" alt="Free" class="icon-24"></td>
+  </tr>
+  <tr>
+          <td data-label="Date">Wednesday</td>
+          <td data-label="Start">11:00</td>
+          <td data-label="End">13:00</td>
+          <td data-label="Description">Programming Lab</td>
+          <td data-label="Place">UP</td>
+          <td data-label="Type">Academic</td>
+          <td data-label="Notes">Submit assignment</td>
+          <td data-label="With">Friends</td>
+          <td data-label="Status"><img src="images/busy.png" alt="Busy" class="icon-24"></td>
+  </tr>
+  <tr>
+          <td data-label="Date">Thursday</td>
+          <td data-label="Start">17:00</td>
+          <td data-label="End">18:00</td>
+          <td data-label="Description">Date</td>
+          <td data-label="Place">Café</td>
+          <td data-label="Type">Social</td>
+          <td data-label="Notes">Enjoy</td>
+          <td data-label="With">Girl</td>
+          <td data-label="Status"><img src="images/free.png" alt="Free" class="icon-24"></td>
+  </tr>
+        <tr>
+          <td data-label="Date">Friday</td>
+          <td data-label="Start">09:00</td>
+          <td data-label="End">11:00</td>
+          <td data-label="Description">Project Meeting</td>
+          <td data-label="Place">Library</td>
+          <td data-label="Type">Academic</td>
+          <td data-label="Notes">Prepare slides</td>
+          <td data-label="With">Project Team</td>
+          <td data-label="Status"><img src="images/busy.png" alt="Busy" class="icon-24"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+      <h3>Forms</h3>
+      <form class="schedule-form" id="scheduleForm">
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" class="form-control mb-2" required>
+          <label for="start">Time start:</label>
+          <input type="time" id="start" name="start" class="form-control mb-2" required>
+          <label for="end">Time end:</label>
+          <input type="time" id="end" name="end" class="form-control mb-2" required>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control form-input" id="floatingInput activity" placeholder="Enter activity" name="activity" required>
+            <label for="floatingInput">Activity</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control form-input" id="floatingInput " placeholder="Enter Place" name="place" required>
+            <label for="floatingInput">Place</label>
+          </div>
+          <div class="form-floating">
+            <select name="type" class="form-select form-input" id="floatingSelect" aria-label="Type">
+              <option selected>Select an Option:</option>
+              <option value="1">School</option>
+              <option value="2">Personal</option>
+              <option value="3">Professional</option>
+              <option value="4">Familiar</option>
+              <option value="5">Other</option>
+            </select>
+            <label for="floatingSelect bg-transparent">Type</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control form-input" id="floatingInput partner" placeholder="Enter Partner" name="partner" required>
+            <label for="floatingInput">Partner</label>
+          </div>
+          <div class="form-floating mb-3">
+            <textarea class="form-control form-input" id="floatingInput notes" placeholder="Enter notes" name="notes" required></textarea>
+            <label for="floatingInput">Notes</label>
+          </div>
+          <label for="flag">Flag:</label>
+          <input type="color" id="flag" name="flag" class="form-control form-control-color mb-2"><br>
+          <label>
+            <input type="checkbox" id="freebusy" name="freebusy" value="busy">
+            Busy?
+          </label><br>
+          <button type="button" class="sub-btn btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="clean all">Clean</button>
+          <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-placement="bottom" data-bs-target="#Modal">
+            Add
+          </button>
+
+          <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title fs-5" id="ModalLabel">Add this info to your schedule</h2>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Are you sure you want to add this info?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="liveToastBtn">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="toast-header">
+                <strong class="me-auto">New Event</strong>
+                <small>1 mins ago</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+              <div class="toast-body">
+                Your event has been added to your schedule!
+              </div>
+            </div>
+          </div>
+
+          <div class="progress mx-5 mt-3" role="progressbar" aria-label="Success" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar text-bg-success" style="width: 25%">25%</div>
+          </div>
+          <div class="d-flex align-items-center mx-5 mt-3">
+            <strong role="status" class="text-success">Loading...</strong>
+            <div class="spinner-border ms-auto text-success" aria-hidden="true"></div>
+      </div>
+        </form>
+  </div>
+  <img src="images/mountain.png" alt="mountain" class="img-fluid d-block mx-auto" style="max-width: 90%; height: auto;">
+    
+    <footer class="bg-light text-center py-3 fixed-bottom">
+      <div class="container">
+        <small class="text-muted">2025 Mateo Sanchez — All rights reserved</small>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+        const liveToastBtn = document.getElementById('liveToastBtn');
+        const liveToastEl = document.getElementById('liveToast');
+        if (liveToastBtn && liveToastEl) {
+          liveToastBtn.addEventListener('click', function () {
+            const toast = bootstrap.Toast.getOrCreateInstance(liveToastEl);
+            toast.show();
+          });
+        }
+
+        const myModal = document.getElementById('myModal');
+        const myInput = document.getElementById('myInput');
+        if (myModal && myInput) {
+          myModal.addEventListener('shown.bs.modal', () => {
+            myInput.focus();
+          });
+        }
+
+        const navSearchForm = document.getElementById('navSearchForm');
+        const navSearchBtn = document.getElementById('navSearchBtn');
+        const navSearchSpinner = document.getElementById('navSearchSpinner');
+        const navSearchLabel = document.getElementById('navSearchLabel');
+        if (navSearchForm && navSearchBtn && navSearchSpinner && navSearchLabel) {
+          navSearchForm.addEventListener('submit', (ev) => {
+            ev.preventDefault();
+            navSearchSpinner.classList.remove('d-none');
+            navSearchBtn.setAttribute('disabled', '');
+            navSearchLabel.textContent = 'Searching...';
+            setTimeout(() => {
+              navSearchSpinner.classList.add('d-none');
+              navSearchBtn.removeAttribute('disabled');
+              navSearchLabel.textContent = 'Search';
+            }, 2000);
+          });
+        }
+      });
+    </script>
+    <script src="js/server.js"></script>
 </body>
 </html>
