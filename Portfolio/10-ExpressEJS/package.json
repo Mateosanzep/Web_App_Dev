@@ -1,0 +1,23 @@
+{
+  "name": "10-expressejs",
+  "version": "1.0.0",
+  "description": "express ejs",
+  "keywords": [
+    "node",
+    "express",
+    "ejs"
+  ],
+  "license": "ISC",
+  "author": "Mateo Sanchez",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2"
+  }
+}

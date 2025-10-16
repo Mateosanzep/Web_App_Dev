@@ -1,0 +1,48 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <h1>Home</h1>
+
+  <% if (!name) { %>
+    <p>You are not logged in. <a href="/">Go back to login</a></p>
+  <% } else { %>
+    <%- include('partials/greeting-card', { name: name, via: via }) %>
+    <section>
+      <h2>Create a new post</h2>
+      <form action="/posts" method="POST" class="post-form">
+        <div>
+          <label for="title">Title</label><br>
+          <input id="title" name="title" required maxlength="200" style="width:100%" />
+        </div>
+        <div style="margin-top:0.5rem">
+          <label for="content">Content</label><br>
+          <textarea id="content" name="content" rows="6" required style="width:100%"></textarea>
+        </div>
+        <div style="margin-top:0.5rem">
+          <button type="submit">Publish</button>
+        </div>
+      </form>
+
+      <h2>Your posts</h2>
+      <% if (posts && posts.length) { %>
+        <ul class="posts-list">
+          <% posts.forEach(function(p){ %>
+            <li>
+              <article>
+                <h3><%= p.title %></h3>
+                <% let summary = p.content && p.content.length > 100 ? p.content.slice(0,100) + '...' : p.content; %>
+                <p><%= summary %></p>
+                <p><a href="/post/<%= p.id %>">Read More</a></p>
+              </article>
+            </li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p>No posts yet.</p>
+      <% } %>
+    </section>
+  <% } %>
+
+</div>
+
+<%- include('partials/footer') %>

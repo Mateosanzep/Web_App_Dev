@@ -9,16 +9,22 @@
 </head>
 
 <body>
-    <% if (locals.error) { %>
-        <h3>
-            <%= error %>
-        </h3>
-        <% } %>
-            <form action="/greet" method="get">
+            <form id="nameForm" action="/greet" method="get">
                 Register:
                 <input type="text" name="name" id="name" placeholder="Name">
                 <input type="submit" value="go next">
             </form>
+            <div id="greetingMessage"></div>
+            <div id="namesList"></div>
+            <div id="todoList">
+                <h2>TODO List:</h2>
+                <form action="/task" method="post" id="taskForm">
+                    <input type="text" name="task" id="task" placeholder="New task">
+                    <input type="submit" value="Add Task">
+                </form>
+            </div>
+
+<script src="/logic.js"></script>
 
 </body>
 

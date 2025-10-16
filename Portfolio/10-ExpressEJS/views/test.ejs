@@ -1,0 +1,60 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <h1>Welcome</h1>
+  <form action="/test" method="post">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" value="<%= name %>" />
+    <input id="submitBtn" type="submit" value="Send" />
+  </form>
+
+  <div id="welcomeMessageGET"></div>
+  <div id="welcomeMessagePOST"></div>
+    <% if (name) { %>
+    <section class="greeting-card">
+        <h2>Hello, <strong><%= name %></strong></h2>
+        <p class="muted">Arrived via: <%= via %></p>
+        <p>This is an example of a greeting with a better design, so you will feel more welcomed!</p>
+    </section>
+  <% } %>
+  <div id="cardContainer"></div>
+</div>
+
+<script>
+    (function(){
+      const btn = document.getElementById('submitBtn');
+      btn.addEventListener('click', async function(event){
+        event.preventDefault();
+        const n = document.getElementById('name').value;
+
+        const response = await fetch('/test/greet?name=' + encodeURIComponent(n));
+        const data = await response.text();
+        document.getElementById('welcomeMessageGET').innerText = data;
+
+        const info = await fetch('/test', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({ name: n })
+        });
+        const postResponse = await info.json();
+        document.getElementById('welcomeMessagePOST').innerText = postResponse.mensaje || JSON.stringify(postResponse);
+
+        try {
+          const cardRes = await fetch('/test/card', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'text/html' },
+            body: JSON.stringify({ name: n })
+          });
+          if (cardRes.ok) {
+            const html = await cardRes.text();
+            const container = document.getElementById('cardContainer');
+            if (container) container.innerHTML = html;
+          }
+        } catch (e) {
+        }
+
+      });
+    })(document);
+</script>
+
+<%- include('partials/footer') %>

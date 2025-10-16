@@ -10,11 +10,22 @@
 
 <body>
     <h1>Success!!</h1>
-    <h3>Wazzup <%= name %>
-    </h3>
+    <h3 id="wazzup">Wazzup</h3>
     <br />
-    <a href="/">
-        Go back </a>
+    <a href="/">Go back</a>
+
+    <script>
+        function getQueryParam(name) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(name) || '';
+        }
+
+        const name = getQueryParam('name');
+        const node = document.getElementById('wazzup');
+        if (name) {
+            node.innerHTML = 'Wazzup <strong>' + name + '</strong>';
+        }
+    </script>
 </body>
 
 </html>

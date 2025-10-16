@@ -6,3 +6,27 @@ html {
 body {
     background-color: beige !important;
 }
+
+/* App layout */
+.container {
+    max-width: 900px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+}
+
+header.app-header {
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    padding:0.5rem 0;
+    border-bottom:1px solid #ddd;
+    margin-bottom:1rem;
+}
+.app-header .logo img { height:40px }
+.app-nav { margin-left:auto }
+.app-nav a { margin: 0 0.5rem; color:#333; text-decoration:none }
+
+footer.app-footer { margin-top:2rem; border-top:1px solid #eee; padding-top:1rem; color:#666 }
+
+/* small utilities */
+.muted { color: #666; font-size:0.9rem }
