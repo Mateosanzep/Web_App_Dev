@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mongo DB - F1 test</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+  body { max-width: 900px; margin: 24px auto; font-family: Arial, Helvetica, sans-serif; }
+  form { background: #f6f6f6; padding: 12px; border-radius: 6px; margin-bottom: 20px }
+  .driver-list { margin-top: 12px }
+  .driver { border-bottom: 1px solid #ddd; padding: 8px 0; display:flex; justify-content:space-between; }
+  .driver .left { flex: 1 }
+  .driver .actions { min-width: 180px; text-align:right }
+  .small { font-size: 0.9rem; color:#555 }
+  .tabs { display:inline-flex; gap:6px }
+  .tab { padding:6px 10px; background:#eee; color:#000; border-radius:4px; text-decoration:none }
+  .tab.active { background:#007bff; color:#fff }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="app-header">
+      <img src="/images/StarLion.png" alt="lion brewery" />
+      <div>
+        <h1>Welcome to my F1 DB</h1>
+      </div>
+    </header>
+
+    <div class="tabs">
+      <a href="/?view=drivers" class="<%= view==='drivers' ? 'tab active' : 'tab' %>">Drivers</a>
+      <a href="/?view=teams" class="<%= view==='teams' ? 'tab active' : 'tab' %>">Teams</a>
+    </div>
+
+  <% if (view === 'drivers') { %>
+    <form action="/driver" method="post">
+      <h2>Driver information</h2>
+      <% if (editDriver) { %>
+        <input type="hidden" name="_id" value="<%= editDriver._id %>" />
+      <% } %>
+      <div class="row">
+        <input type="text" name="num" id="num" placeholder="Number" value="<%= editDriver ? editDriver.num : '' %>" />
+        <input type="text" name="code" id="code" placeholder="Code" value="<%= editDriver ? editDriver.code : '' %>" />
+        <input type="text" name="forename" id="forename" placeholder="Name" value="<%= editDriver ? editDriver.forename : '' %>" />
+        <input type="text" name="surname" id="surname" placeholder="Last name" value="<%= editDriver ? editDriver.surname : '' %>" />
+      </div>
+      <div class="row">
+        <div style="flex:1">
+          <label for="dob">Date of birth: </label>
+          <input type="date" name="dob" id="dob" value="<%= editDriver && editDriver.dob ? new Date(editDriver.dob).toISOString().substring(0,10) : '' %>" />
+        </div>
+        <div style="flex:1">
+          <label for="url">Biography URL: </label>
+          <input type="url" name="url" id="url" value="<%= editDriver ? editDriver.url : '' %>" />
+        </div>
+      </div>
+      <div class="row">
+        <div style="flex:1">
+          <label for="nation">Nationality: </label>
+          <select name="nation" id="nation">
+            <option value="">-- choose --</option>
+            <% countries.forEach(function(c){ %>
+              <option value="<%= c.code %>" <%= editDriver && editDriver.nationality==c.code ? 'selected' : '' %>><%= c.label %></option>
+            <% }) %>
+          </select>
+        </div>
+        <div style="flex:1">
+          <label for="team">Team: </label>
+          <select name="team" id="team">
+            <option value="">-- choose --</option>
+            <% teams.forEach(function(t){ %>
+              <option value="<%= t.name %>" <%= editDriver && editDriver.team && editDriver.team.name==t.name ? 'selected' : '' %>><%= t.name %></option>
+            <% }) %>
+          </select>
+        </div>
+      </div>
+      <p> <input type="submit" value="Save"/> <% if (editDriver) { %> <a href="/">Cancel</a> <% } %> </p>
+    </form>
+
+    <div>
+      <h2>Drivers in DB (<%= drivers.length %>)</h2>
+      <div class="driver-list">
+        <% drivers.forEach(function(d){ %>
+          <div class="driver">
+            <div class="left">
+              <strong><%= d.forename %> <%= d.surname %></strong>
+              <div class="small">#<%= d.num %> • <%= d.code %> • <%= d.nationality %> • <%= d.team && d.team.name ? d.team.name : '—' %></div>
+            </div>
+            <div class="actions">
+                <a href="/?view=drivers&edit=<%= d._id %>">Edit</a>
+              <form action="/driver/delete" method="post" style="display:inline">
+                <input type="hidden" name="_id" value="<%= d._id %>" />
+                <button type="submit" onclick="return confirm('Delete this driver?')">Delete</button>
+              </form>
+                <button type="button" class="tab" onclick="toggleDetails('<%= d._id %>')" style="margin-left:8px">Details</button>
+            </div>
+          </div>
+          <div id="details-<%= d._id %>" style="display:none;background:var(--card);border:1px solid var(--border);padding:12px;border-radius:8px;margin-top:8px">
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <div style="flex:1;min-width:180px">
+                <div class="small"><strong>Full name</strong></div>
+                <div><%= d.forename %> <%= d.surname %></div>
+                <div class="small" style="margin-top:8px"><strong>Number / Code</strong></div>
+                <div>#<%= d.num %> • <%= d.code %></div>
+              </div>
+              <div style="flex:1;min-width:180px">
+                <div class="small"><strong>Date of birth</strong></div>
+                <div><%= d.dob ? (new Date(d.dob)).toLocaleDateString() : '—' %></div>
+                <div class="small" style="margin-top:8px"><strong>Nationality</strong></div>
+                <div><%= d.nationality || '—' %></div>
+              </div>
+              <div style="flex:1;min-width:180px">
+                <div class="small"><strong>Team</strong></div>
+                <div><%= d.team && d.team.name ? d.team.name : '—' %></div>
+                <div class="small" style="margin-top:8px"><strong>Biography</strong></div>
+                <div><% if (d.url) { %><a href="<%= d.url %>" target="_blank" rel="noopener"><%= d.url %></a><% } else { %>—<% } %></div>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  <% } else { %>
+    <div>
+      <h2>Teams (<%= teams.length %>)</h2>
+      <div style="margin-bottom:12px">
+        <% if (editTeam) { %>
+          <form action="/team" method="post">
+            <input type="hidden" name="team_old" value="<%= editTeam %>" />
+            <label>Rename team "<%= editTeam %>" to: </label>
+            <input type="text" name="team_new" value="" placeholder="New team name" />
+            <button type="submit">Rename</button>
+            <a href="/?view=teams">Cancel</a>
+          </form>
+        <% } 
+        %>
+      </div>
+
+      <div class="driver-list">
+        <% teams.forEach(function(t){ %>
+          <div class="driver">
+            <div class="left">
+              <strong><%= t.name %></strong>
+              <div class="small">Team id: <%= t.id || '-' %></div>
+            </div>
+            <div class="actions">
+              <a href="/?view=teams&editTeam=<%= encodeURIComponent(t.name) %>">Edit</a>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  <% } %>
+  <script>
+    function toggleDetails(id){
+      const el = document.getElementById('details-' + id);
+      if(!el) return;
+      el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+      el.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+  </script>
+  </div>
+</body>
+
+</html>

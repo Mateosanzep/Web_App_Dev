@@ -1,3 +1,8 @@
+body { background-color: #f8f9fa; }
+.container { max-width: 420px; margin-top: 60px; }
+.form-signup { width: 100%; padding: 15px; margin: 0 auto; }
+.form-signup .form-control { height: 44px; border-radius: 8px; }
+.jumbotron { background-color: #fff; border-radius: 8px; }
 html,
 body {
   height: 100%;

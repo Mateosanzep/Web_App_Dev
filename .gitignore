@@ -1,6 +1,4 @@
-# Node modules
-# Ignore any node_modules folder anywhere in the repo
 node_modules/
-# If you prefer an explicit glob for any depth, use: **/node_modules/
 /dist/
 package-lock.json
+.env

@@ -1,16 +1,18 @@
 {
   "name": "todolist-v1",
   "version": "1.0.0",
-  "description": "",
+  "description": "The goal of this project is to create a ToDo List web application using Node.js, Express.js, EJS and MongoDB. The application will allow users to create and view tasks. Styling will be an important aspect of this project to ensure a good user experience.",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "mongoose": "^6.8.0"
   }
 }
