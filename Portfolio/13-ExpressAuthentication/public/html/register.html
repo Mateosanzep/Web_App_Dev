@@ -9,21 +9,28 @@
 </head>
 
 <body>
-  <h1>Register</h1>
-  <form action="/register" method="post">
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username" required />
+  <div class="container">
+    <h1>Create account</h1>
+    <form action="/register" method="post">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" required />
 
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" required />
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required />
 
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" required />
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required />
 
-    <button type="submit">Register</button>
-  </form>
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">Register</button>
+        <a class="btn btn-google" href="/auth/google" aria-label="Sign in with Google">Sign in with Google</a>
+      </div>
+    </form>
 
-  <p><a href="/">Back to login</a></p>
+    <div class="links">
+      <p><a href="/">Back to login</a></p>
+    </div>
+  </div>
 </body>
 
 </html>

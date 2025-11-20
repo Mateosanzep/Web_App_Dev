@@ -1,44 +1,56 @@
-html {
-    min-height: 100%;
-    position: relative;
-}
+/* General layout */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#f9fafb;color:#111;display:flex;align-items:center;justify-content:center;padding:24px}
+.container{width:100%;max-width:520px;background:#fff;border-radius:8px;padding:20px}
+h1{margin:0 0 8px 0;font-size:1.4rem;text-align:center}
+form{display:flex;flex-direction:column;gap:10px}
+label{font-size:0.9rem;color:#333}
+input[type=text],input[type=password],input[type=email]{width:100%;padding:8px;border:1px solid #e5e7eb;border-radius:6px;background:#fff}
+input:focus{outline:none;border-color:#9ca3af}
+.btn{display:inline-block;padding:8px 12px;border-radius:6px;border:none;cursor:pointer;font-weight:600}
+.btn-primary{background:#4f46e5;color:#fff}
+.btn-ghost{background:transparent;border:1px solid #e5e7eb;color:#374151}
+.btn-google{background:#fff;color:#111;border:1px solid #e5e7eb;display:flex;align-items:center;gap:8px;justify-content:center;padding:8px 10px}
+.actions{display:flex;gap:8px;justify-content:center;margin-top:8px}
+.links{text-align:center;margin-top:10px;color:#6b7280}
+.hero-img{display:block;margin:0 auto 10px;width:72px}
+.secret-card{padding:16px;background:#fff;border-radius:8px;border:1px solid #eef2f7}
+.secret-form{display:flex;gap:8px;align-items:center;margin-top:8px}
+.secret-form input{flex:1;padding:8px;border-radius:6px;border:1px solid #e5e7eb}
+.secret-list{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
+.secret-item{padding:10px;background:#fff;border-radius:8px;border:1px solid #eef2f7}
+.muted{color:#6b7280;font-size:0.95rem}
+@media(min-width:720px){.secret-list{grid-template-columns:1fr 1fr}}
 
-body {
-    background-color: beige !important;
-}
+.small-img{width:110px;display:block;margin:8px auto;border-radius:6px}
 
-h2 {
-    color: red;
-}
-
-form input,
-select {
-    border-style: none;
-}
-
-input[type=text]:focus {
-    border: 4px solid #c9b220;
-}
-
-.header {
-    position: relative;
-    height: 100vh;
-    min-height: 500px;
-    background-image: url(../images/middle_earth.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    overflow: hidden;
-    border: none;
-}
-
-.header .overlay .title {
-    font-size: calc(30px + (70 - 30) * ((100vw - 320px) / (1200 - 320)));
-    font-weight: bold;
+/* Secrets page specific */
+.secret-hero {
     text-align: center;
-    color: whitesmoke;
-    text-shadow: -1px 1px 0 #000,
-        1px 1px 0 #000,
-        1px -1px 0 #000,
-        -1px -1px 0 #000;
+    margin-bottom: 10px;
+    color: #1f2937;
+}
+
+.secret-card {
+    padding: 18px;
+    background: linear-gradient(180deg,#fff,#fbfdff);
+    border-radius: 10px;
+    border: 1px solid #eef2f7;
+    box-shadow: 0 4px 18px rgba(30,41,59,0.06);
+}
+
+.secret-form { display:flex; gap:10px; align-items:center; margin-top:10px; }
+.secret-form input[type="text"], .secret-form input[type="textarea"], .secret-form input[id="secret"] {
+    flex:1; padding:10px 12px; border-radius:8px; border:1px solid #e6e9ee;
+}
+.secret-form button { padding:10px 14px; border-radius:8px; }
+
+.secret-list { display:grid; grid-template-columns: 1fr; gap:10px; margin-top:14px; }
+.secret-item { padding:12px 14px; background:#fff; border-radius:10px; border:1px solid #eef2f7; box-shadow: 0 2px 8px rgba(15,23,42,0.03); }
+
+.muted { color:#6b7280; font-size:0.95rem; }
+
+@media(min-width:720px){
+    .secret-list { grid-template-columns: 1fr 1fr; }
 }

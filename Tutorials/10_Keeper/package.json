@@ -1,0 +1,17 @@
+{
+  "name": "10_keeper",
+  "version": "1.0.0",
+  "description": "In this tutorial, we will work with React to create an interactive application that will allow us to save information at least on the session. To work this one out, we will work in 3 legs.  - In the first one, we will create the basic components.  - On the second one, we will use props to pass values from parent to child components. - Finally on the third leg we will have a top-down-top integration of our components.",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html --open --port 3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}

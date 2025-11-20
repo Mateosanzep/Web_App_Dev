@@ -10,15 +10,27 @@
 </head>
 
 <body>
-    <img src="../images/StarLion.png" alt="lion brewery" />
-    <h1>Welcome to my page</h1>
-    <form action="/login" method="post">
-        <label for="username">User</label>
-        <input type="text" name="username" id="username" required />
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required />
-        <input type="submit" />
-    </form>
+                <div class="container">
+                    <img class="hero-img" src="../images/StarLion.png" alt="StarLion" />
+                    <h1>Welcome</h1>
+
+                <form action="/login" method="post">
+                    <label for="username">User</label>
+                    <input type="text" name="username" id="username" required />
+
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required />
+
+                    <div class="actions">
+                        <button class="btn btn-primary" type="submit">Sign in</button>
+                        <a class="btn btn-google" href="/auth/google" aria-label="Sign in with Google">Sign in with Google</a>
+                    </div>
+                </form>
+
+                <div class="links">
+                    <p><a href="/register">Register a new account</a></p>
+                </div>
+            </div>
 </body>
 
 </html>
